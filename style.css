@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+  --bg-home: url('./assets/mountains-universe-1.png');
+  --bg-universe: url('./assets/mountains-universe02.png');
+  --bg-exploration: url('./assets/mountains-universe-3.png');
+
+  --color-text-menu: #cacacc;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body,
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  padding: 4rem 7.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  gap: 3.2rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--color-text-menu);
+  text-decoration: none;
+}
+
+a:active {
+  font-weight: 700;
+}
+
+.home {
+  background: var(--bg-home) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.universe {
+  background: var(--bg-universe) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.exploration {
+  background: var(--bg-exploration) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  height: 100vh;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2.4rem;
+  height: 100vh;
+  padding: 18rem 10rem;
+}
+
+.content h1 {
+  padding-top: 7.2rem;
+  font-size: 4.8rem;
+  line-height: 6rem;
+
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.content p {
+  width: 65rem;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.content button {
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  padding: 1.2rem 3.2rem;
+  background: transparent;
+  text-transform: uppercase;
+  line-height: 2.4rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.content button:hover {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+  .content p {
+    width: 100%;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
